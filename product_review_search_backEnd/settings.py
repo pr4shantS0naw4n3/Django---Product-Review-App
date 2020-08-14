@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'product_review_search_backEnd.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_0833b8ce9eebdfe',
-        'USER': 'b6fd732f9178e1',
-        'PASSWORD': '259f3e84',
-        'HOST': 'us-cdbr-east-02.cleardb.com',
+        'NAME': 'reviewdb',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'traditional',
