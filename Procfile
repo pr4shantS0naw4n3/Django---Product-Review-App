@@ -1,1 +1,1 @@
-web: gunicorn django_project.wsgi
+web: gunicorn product_review_search_backEnd.wsgi
