@@ -81,7 +81,10 @@ DATABASES = {
         'USER': 'b6fd732f9178e1',
         'PASSWORD': '259f3e84',
         'HOST': 'us-cdbr-east-02.cleardb.com',
-        'PORT': '3306'
+        'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
