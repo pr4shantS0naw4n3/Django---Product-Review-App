@@ -96,25 +96,17 @@ try:
         }
 
     if 'DATABASE_URL' in os.environ:
-        url = urllib.parse(os.environ['DATABASE_URL'])
-
-        # Ensure default database exists.
-        DATABASES['default'] = DATABASES.get('default', {})
-
-        # Update with environment configuration.
-        DATABASES['default'].update({
-            'NAME': url.path[1:],
-            'USER': url.username,
-            'PASSWORD': url.password,
-            'HOST': url.hostname,
-            'PORT': '3306',
-            'OPTIONS': {
-                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'heroku_0833b8ce9eebdfe',
+                'USER': 'b6fd732f9178e1',
+                'PASSWORD': '259f3e84',
+                'HOST': 'us-cdbr-east-02.cleardb.com',
+                'PORT': '3306'
             }
-        })
+        }
 
-        if url.scheme == 'mysql':
-            DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
 except Exception:
     print('Unexpected error:', sys.exc_info())
 # DATABASES = {
