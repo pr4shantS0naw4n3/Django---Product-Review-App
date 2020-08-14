@@ -110,8 +110,7 @@ try:
             'HOST': url.hostname,
             'PORT': url.port,
         })
-
-
+        print(DATABASES)
         if url.scheme == 'mysql':
             DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
 except Exception:
