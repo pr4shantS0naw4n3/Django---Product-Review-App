@@ -12,10 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 import django_heroku
 from pathlib import Path
-import urllib.parse
-import sys
-
-urllib.parse.uses_netloc.append('mysql')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -78,46 +74,16 @@ WSGI_APPLICATION = 'product_review_search_backEnd.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-try:
-
-    # Check to make sure DATABASES is set in settings.py file.
-    # If not default to {}
-
-    if 'DATABASES' not in locals():
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.mysql',
-                'NAME': 'reviewdb',
-                'USER': 'root',
-                'PASSWORD': 'root',
-                'HOST': 'localhost',
-                'PORT': '3306',
-            }
-        }
-
-    if 'DATABASE_URL' in os.environ:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.mysql',
-                'NAME': 'heroku_0833b8ce9eebdfe',
-                'USER': 'b6fd732f9178e1',
-                'PASSWORD': '259f3e84',
-                'HOST': 'us-cdbr-east-02.cleardb.com',
-                'PORT': '3306'
-            }
-        }
-
-except Exception:
-    print('Unexpected error:', sys.exc_info())
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'heroku_0833b8ce9eebdfe',
-#         'USER': 'b6fd732f9178e1',
-#         'PASSWORD': '259f3e84',
-#         'HOST': 'us-cdbr-east-02.cleardb.com',
-#         'PORT': '3306'
-#     }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'heroku_0833b8ce9eebdfe',
+        'USER': 'b6fd732f9178e1',
+        'PASSWORD': '259f3e84',
+        'HOST': 'us-cdbr-east-02.cleardb.com',
+        'PORT': '3306'
+    }
+}
 
 
 # Password validation
