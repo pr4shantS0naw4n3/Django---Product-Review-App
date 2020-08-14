@@ -116,16 +116,6 @@ try:
             DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
 except Exception:
     print('Unexpected error:', sys.exc_info())
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_0833b8ce9eebdfe',
-        'USER': 'b6fd732f9178e1',
-        'PASSWORD': '259f3e84',
-        'HOST': 'us-cdbr-east-02.cleardb.com',
-        'PORT': '3306'
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
