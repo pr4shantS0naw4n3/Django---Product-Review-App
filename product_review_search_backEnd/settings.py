@@ -108,6 +108,9 @@ try:
             'PASSWORD': url.password,
             'HOST': url.hostname,
             'PORT': url.port,
+            'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+            }
         })
         if url.scheme == 'mysql':
             DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
