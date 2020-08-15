@@ -32,9 +32,13 @@ class ReviewSearchView(APIView):
                     max_helpfulness = find.aggregate(Max('helpfulness'))
                     data = find.filter(
                         Q(score=max_score['score__max']) & Q(helpfulness=max_helpfulness['helpfulness__max']))
-                    serializer = ReviewSerializer(data, many=True)
+                    if(len(data)>0):
+                        serializer = ReviewSerializer(data, many=True)
                     # Return the filtered data
-                    return Response({'status': 200, 'find': serializer.data}, status=status.HTTP_200_OK)
+                        return Response({'status': 200, 'find': serializer.data}, status=status.HTTP_200_OK)
+                    else:
+                        return Response({'status': 404, 'responseMessage': 'Keyword not found'},
+                                        status=status.HTTP_404_NOT_FOUND)
                 else:
                     # Return if keyword not found
                     return Response({'status': 404, 'responseMessage': 'Keyword not found'},
