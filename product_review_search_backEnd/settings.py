@@ -127,7 +127,8 @@ USE_TZ = True
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:4200"
+    "http://localhost:4200",
+    "https://search-product-review.herokuapp.com"
 ]
 
 django_heroku.settings(locals())
