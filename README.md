@@ -80,7 +80,7 @@ Take the foods.txt file and paste it in root folder i.e product_review_search_ba
 goto the terminal(project terminal) and run the following command
 
 ```
-python parseToJson
+python parseToJson.py
 ```
 This will parse the foods.txt file and convert it to json fixture
 The Parsing may take some time as the file data is huge
